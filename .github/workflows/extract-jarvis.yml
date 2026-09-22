@@ -1,0 +1,21 @@
+name: Extract JARVIS source
+
+on:
+  push:
+    paths:
+      - "j.a.r.v.i.s.-türkçe-asistan 9.zip"
+
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - name: Extract ZIP
+        run: |
+          mkdir -p extracted
+          unzip -q "j.a.r.v.i.s.-türkçe-asistan 9.zip" -d extracted
+      - name: Upload extracted source
+        uses: actions/upload-artifact@v4
+        with:
+          name: jarvis-source-extracted
+          path: extracted/
