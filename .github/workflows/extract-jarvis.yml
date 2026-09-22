@@ -2,8 +2,9 @@ name: Extract JARVIS source
 
 on:
   push:
-    paths:
-      - "j.a.r.v.i.s.-türkçe-asistan 9.zip"
+    branches:
+      - main
+  workflow_dispatch:
 
 jobs:
   extract:
